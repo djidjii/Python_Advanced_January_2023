@@ -1,0 +1,11 @@
+data = input()
+index = []
+
+for i in range(len(data)):
+    character = data[i]
+
+    if character == '(':
+        index.append(i)
+    elif character == ')':
+        l = index.pop()
+        print(data[l:i+1])
