@@ -1,0 +1,19 @@
+from _collections import deque
+
+name_of_player = input().split(' ')
+step_of_hot_potato = int(input())
+
+player_deque = deque(name_of_player)
+counter = 0
+
+while len(player_deque) > 1:
+    counter += 1
+    current_name_of_player = player_deque.popleft()
+
+    if counter == step_of_hot_potato:
+        print(f"Removed {current_name_of_player}")
+        counter = 0
+    else:
+        player_deque.append(current_name_of_player)
+
+print(f"Last is {player_deque[0]}")
