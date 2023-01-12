@@ -1,0 +1,21 @@
+from _collections import deque
+
+name_deque = deque()
+
+command_end = 'End'
+command_paind = 'Paind'
+
+while True:
+    command = input()
+
+    if command == command_end:
+        print(f"{len(name_deque)} people remaining.")
+        break
+
+    elif command == command_paind:
+        while name_deque:
+            print(name_deque.popleft())
+
+    else:
+        name_deque.append(command)
+
