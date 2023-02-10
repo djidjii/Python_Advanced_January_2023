@@ -92,6 +92,10 @@ def check_win_condition(playground, row_index, column_index, win_counter):
 
     return any(len(current_list) == win_counter and len(set(current_list)) == 1 for current_list in possible_winner_checker)
 
+    # for current_list in possible_winner_checker:
+    #     if len(current_list) == win_counter and len(set(current_list)) == 1:
+    #         return True
+    # return False
 
 def game_play_function(playground, win_counter):
     current_player, second_player = 1, 2
@@ -106,7 +110,6 @@ def game_play_function(playground, win_counter):
             break
 
         current_player, second_player = second_player, current_player
-
 
 def print_function(playground):
     for row in playground:
